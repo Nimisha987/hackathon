@@ -8,3 +8,4 @@ google-generativeai
 werkzeug
 gunicorn
 python-dotenv
+torchvision
