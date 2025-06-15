@@ -1,0 +1,42 @@
+# app.yaml
+# This file configures your Flask application for deployment on Google App Engine.
+
+# Specify the Python runtime. Python 3.9 is a common and stable choice.
+# App Engine Standard supports Python 3.7, 3.8, 3.9, 3.10, 3.11, and 3.12 (as of current knowledge).
+# python39 is generally safe, but you can try python311 or python312 if you prefer.
+runtime: python39
+# Ensure your local Python version matches or is compatible with this runtime.
+
+# Specify the entrypoint for your application.
+# Gunicorn is used as the production web server.
+# App Engine automatically sets the PORT environment variable.
+entrypoint: gunicorn -b :$PORT app:app
+
+# Specifies the environment variables your application needs.
+# These will be securely injected into your application's environment at runtime.
+# This is where your API keys go.
+env_variables:
+  GEMINI_API_KEY: "YOUR_NEW_GEMINI_API_KEY_HERE"
+  GOOGLE_MAPS_API_KEY: "YOUR_NEW_GOOGLE_MAPS_API_KEY_HERE"
+  # Replace "YOUR_NEW_GEMINI_API_KEY_HERE" and "YOUR_NEW_GOOGLE_MAPS_API_KEY_HERE"
+  # with your actual, newly generated, and restricted API keys.
+  # DO NOT commit actual API keys directly to GitHub.
+  # For local development, these are loaded from your .env file by python-dotenv.
+
+# Specifies the instance class. F1 instances are part of the App Engine free tier
+# and offer 1GB of memory, which should be more suitable for your ML models.
+instance_class: F1
+
+# Automatic scaling configuration (optional, but good for free tier).
+# Adjust min_instances to 0 if you want the app to spin down completely when idle (saves costs).
+# max_instances limits the maximum number of instances.
+automatic_scaling:
+  min_instances: 0
+  max_instances: 1 # Start with 1 instance for your free tier deployment
+
+# Optionally, specify resources for instances.
+# resources:
+#   cpu: 1
+#   memory_gb: 1
+#   disk_size_gb: 10
+# (These are generally derived from instance_class for standard environment)
