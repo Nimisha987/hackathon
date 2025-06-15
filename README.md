@@ -1,4 +1,4 @@
-# CureCare – AI-Enabled Healthcare Support System
+# CuraCare – AI-Enabled Healthcare Support System
 ## Problem Statement
 
 India continues to face a significant healthcare gap, particularly in semi-urban and rural regions. Limited access to qualified doctors, language barriers, insufficient health infrastructure, and the lack of electronic health records make early diagnosis, consultation, and follow-up care inefficient and inaccessible.
@@ -7,9 +7,9 @@ India continues to face a significant healthcare gap, particularly in semi-urban
 
 **CureCare** aims to bridge this gap by leveraging AI and machine learning to make diagnostics and medical consultation more accessible, efficient, and affordable for all.
 
-##  What is CureCare?
+##  What is CuraCare?
 
-**CureCare** is an AI-powered platform designed to simplify the healthcare experience for both patients and doctors. From early symptom detection to AI-generated consultation notes, our tools support faster, smarter, and more empathetic healthcare delivery.
+**CuraCare** is an AI-powered platform designed to simplify the healthcare experience for both patients and doctors. From early symptom detection to AI-generated consultation notes, our tools support faster, smarter, and more empathetic healthcare delivery.
 
 ## Key Features
 
@@ -79,13 +79,13 @@ It’s a simple, supportive way to better understand your health and feel more i
 
 ## 🌍 Vision
 
-We envision a future where everyone, regardless of location or income, can access affordable, quality healthcare using just a phone. **CureCare** is not just a tech platform; it's a movement toward **health equity** powered by **AI**.
+We envision a future where everyone, regardless of location or income, can access affordable, quality healthcare using just a phone. **CuraCare** is not just a tech platform; it's a movement toward **health equity** powered by **AI**.
 
 ---
 
 ## 🤝 Contributions Welcome
 
-Have ideas to improve CureCare? We welcome collaborators — whether you're a medical expert, ML developer, or UI/UX designer.
+Have ideas to improve CuraCare? We welcome collaborators — whether you're a medical expert, ML developer, or UI/UX designer.
 
 
 ## 📫 Contact
