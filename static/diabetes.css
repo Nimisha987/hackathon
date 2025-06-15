@@ -1,0 +1,171 @@
+/* Styles specifically for Diabetes Analyzer and Result pages */
+
+/* Hero Image */
+.hero-img img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* Analyzer Section */
+.analyzer-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.analyzer-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.analyzer-section p {
+  max-width: 800px;
+  margin: 10px auto;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Grid Form Container */
+.grid-form-container {
+  display: flex;
+  flex-direction: column; /* Stack columns on small screens */
+  gap: 40px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 900px; /* Limit overall form width */
+  align-items: center; /* Center form elements (horizontally in this flex-direction) */
+}
+
+@media (min-width: 768px) {
+  .form-rows {
+    display: flex;
+    justify-content: center; /* Changed from space-between to center to visually bring content to middle */
+    gap: 40px; /* Maintained gap for spacing between columns */
+    width: 100%;
+  }
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  gap: 20px;
+  width: 100%; /* Ensure columns take full width on small screens */
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-field label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1c1c1c;
+  font-family: 'Poppins', sans-serif; /* Keep if specific font desired here */
+}
+
+input[type="text"] {
+  padding: 12px 18px;
+  border: 1.5px solid #1c1c1c;
+  border-radius: 30px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  font-family: 'Poppins', sans-serif; /* Keep if specific font desired here */
+  width: 100%; /* Ensure inputs take full width of their container */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+input[type="text"]::placeholder {
+  color: #999;
+}
+
+input[type="text"]:focus {
+  border-color: #00a99d;
+}
+
+.form-button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.prediction-result {
+  background-color: #e6fafa;
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.prediction-result h3 {
+  color: #00a99d;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.prediction-result p {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Specific styles for diabetes.html (result page) */
+.result-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Adjusted to fit better with header/footer */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.result-box {
+    background-color: #e6fafa;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 169, 157, 0.15);
+    max-width: 600px;
+    width: 100%;
+}
+.result-box h2 {
+    color: #00a99d;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.result-box p {
+    font-size: 20px;
+    color: #333;
+    font-weight: 500;
+}
+.back-button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: #00a99d;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+.back-button:hover {
+    background-color: #008f85;
+}

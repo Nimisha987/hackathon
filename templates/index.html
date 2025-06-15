@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Health Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+
+  <!-- Header -->
+<header>
+  <div class="container nav">
+    <h1 class="logo">CureCare</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li class="dropdown">
+          <a href="#" class="active">Services ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url_for('diabetes') }}">Diabetes Risk Analyzer</a></li>
+            <li><a href="{{ url_for('skin') }}">Skin Disease Predictor</a></li>
+            <li><a href="{{ url_for('symptom') }}">Symptom Classifier</a></li>
+            <li><a href="{{ url_for('summary') }}">Note Summarizer</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="auth-links">
+      <a href="{{ url_for('signup') }}" class="btn small-btn">Sign Up</a>
+      <a href="{{ url_for('login') }}" class="btn small-btn">Login</a>
+    </div>
+  </div>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h2>Track Symptoms <span>Smarter</span> with AI</h2>
+        <p>
+          Track your health smarter with AI-powered tools that predict conditions, simplify reports, and help you understand your symptoms — instantly, securely, and with empathy.
+        </p>
+        <a href="#contact" class="btn">Get Started</a>
+      </div>
+      <div class="hero-image">
+        <img src="{{ url_for('static', filename='image/1.png') }}" alt="AI Health Tool" />
+        <div class="stat-box top-box">85%<br><span>Prediction Accuracy</span></div>
+        <div class="stat-box bottom-box">850+<br><span>Conditions Identified</span></div>
+        <div class="stat-box left-box">500+<br><span>Patients Served</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container about-grid">
+      <img src="{{ url_for('static', filename='image/4.jpg') }}" alt="Doctor VR" />
+      <div class="about-text">
+        <h3>About <span>Us</span></h3>
+        <p>
+          We are a health-tech company dedicated to making diagnosis simpler through AI.
+          Our tools help users track symptoms, predict conditions, and understand medical information — quickly, securely, and with care.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offer Section -->
+  <section class="offer-section">
+    <div class="container text-center">
+      <h3>What We <span>Offer</span></h3>
+      <p>
+        Our AI-powered platform helps you understand your health better by predicting conditions, analyzing symptoms, summarizing medical notes, and assessing diabetes risk — all in one place.
+      </p>
+      <p>Built for speed, privacy, and clarity — so you never feel lost about your health again.</p>
+    </div>
+  </section>
+
+  <!-- Services Cards -->
+<section class="solutions-section">
+  <div class="container text-center">
+    <h3>Begin your journey with our <span class="highlight">AI solutions</span>,<br>built to empower your health decisions.</h3>
+
+    <div class="solutions-grid">
+      <div class="card">
+        <img src="{{ url_for('static', filename='image/5.jpg') }}" alt="Skin Icon" />
+        <h4>Skin Disease Predictor</h4>
+        <p>Upload an image to detect common skin conditions with AI precision.</p>
+        <div class="active-users">180+ Active Users</div>
+      </div>
+      <div class="card highlighted">
+        <img src="{{ url_for('static', filename='image/6.jpg') }}" alt="Symptom Icon" />
+        <h4>Symptom Classifier</h4>
+        <p>Describe what you’re feeling — get instant, possible condition matches.</p>
+        <div class="active-users">500+ Active Users</div>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='image/7.jpg') }}" alt="Note Icon" />
+        <h4>Medical Note Summarizer</h4>
+        <p>Paste your report — we’ll turn complex terms into simple summaries.</p>
+        <div class="active-users">50+ Active Users</div>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='image/8.jpg') }}" alt="Diabetes Icon" />
+        <h4>Diabetes Risk Analyzer</h4>
+        <p>Enter key health info to assess your diabetes risk in seconds.</p>
+        <div class="active-users">300+ Active Users</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h2 class="logo">CureCare</h2>
+        <div class="social-icons">
+          <a href="#">📷</a>
+          <a href="#">📘</a>
+          <a href="#">🐦</a>
+          <a href="#">💼</a>
+        </div>
+      </div>
+      <div>
+        <h4>CureCare</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="{{ url_for('skin') }}">Skin Disease Predictor</a></li>
+          <li><a href="{{ url_for('symptom') }}">Symptom Classifier</a></li>
+          <li><a href="{{ url_for('summary') }}">Note Summarizer</a></li>
+          <li><a href="{{ url_for('diabetes') }}">Diabetes Analyzer</a></li>
+        </ul>
+      </div>
+    <div id="contact">
+    <h4>Get in Touch</h4>
+    <p>support@curacare.com</p>
+    <p>Delhi, India</p>
+    <p>+91 1234 567890</p>
+    </div>
+
+    </div>
+    <p class="copyright">Copyright © 2025 CureCare. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up | AI Health Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <style>
+    .form-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f8f9fb;
+    }
+
+    .form-box {
+      background: white;
+      padding: 2rem 3rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .form-box h2 {
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #333;
+    }
+
+    .form-box label {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .form-box input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .form-box .btn {
+      width: 100%;
+      margin-top: 1.5rem;
+      padding: 0.9rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      background-color: #00a99d;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-box .btn:hover {
+      background-color: #008f85;
+    }
+
+    .form-box p {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .form-box p a {
+      color: #00a99d;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <h1 class="logo">CureCare</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li class="dropdown">
+            <a href="#" class="active">Services ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ url_for('diabetes') }}">Diabetes Risk Analyzer</a></li>
+              <li><a href="{{ url_for('skin') }}">Skin Disease Predictor</a></li>
+              <li><a href="{{ url_for('symptom') }}">Symptom Classifier</a></li>
+              <li><a href="{{ url_for('summary') }}">Note Summarizer</a></li>
+            </ul>
+          </li>
+         <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="auth-links">
+        <a href="{{ url_for('signup') }}" class="btn small-btn">Sign Up</a>
+        <a href="{{ url_for('login') }}" class="btn small-btn">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Signup Form -->
+  <section class="form-section">
+    <div class="form-box">
+      <h2>Create Your Account</h2>
+      <form action="#" method="post">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required />
+
+        <label for="email">Email ID</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required />
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required min="1" />
+
+        <button type="submit" class="btn">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diabetes Risk Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='diabetes.css') }}" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <h1 class="logo">CureCare</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+        <li class="dropdown">
+          <a href="#" class="active">Services ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url_for('diabetes') }}">Diabetes Risk Analyzer</a></li>
+            <li><a href="{{ url_for('skin') }}">Skin Disease Predictor</a></li>
+            <li><a href="{{ url_for('symptom') }}">Symptom Classifier</a></li>
+            <li><a href="{{ url_for('summary') }}">Note Summarizer</a></li>
+          </ul>
+        </li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Image -->
+  <section class="hero-img">
+    <img src="{{ url_for('static', filename='image/2.jpg') }}" alt="Blood Test" />
+  </section>
+
+  <!-- Main Content -->
+  <section class="analyzer-section">
+    <div class="container">
+      <h2><span>Diabetes</span> Risk Analyzer</h2>
+      <p>
+        Diabetes often develops silently, without clear symptoms in the early stages. Our AI-powered Diabetes Prediction Tracker is designed to help you understand your potential risk through a few simple questions and health indicators.
+      </p>
+      <p>
+        Whether you're just curious or have a family history, this tool offers a quick, private, and accessible way to gain clarity. It’s not a diagnosis — it’s a starting point to help you take control of your health, early and confidently.
+      </p>
+
+      <!-- Flask form with action pointing to the diabetes route -->
+      <form class="grid-form-container" action="{{ url_for('diabetes') }}" method="post">
+        <div class="form-rows">
+          <div class="form-column">
+            <div class="form-field">
+              <label for="pregnancies">Pregnancies</label>
+              <input type="text" id="pregnancies" name="pregnancies" placeholder="Enter 0 if none/male" required>
+            </div>
+            <div class="form-field">
+              <label for="glucose">Glucose</label>
+              <input type="text" id="glucose" name="glucose" placeholder="e.g. 165" required>
+            </div>
+            <div class="form-field">
+              <label for="blood_pressure">Blood Pressure</label>
+              <input type="text" id="blood_pressure" name="blood_pressure" placeholder="e.g. 78" required>
+            </div>
+            <div class="form-field">
+              <label for="skin_thickness">Skin Thickness</label>
+              <input type="text" id="skin_thickness" name="skin_thickness" placeholder="e.g. 32" required>
+            </div>
+          </div>
+
+          <div class="form-column">
+            <div class="form-field">
+              <label for="insulin">Insulin</label>
+              <input type="text" id="insulin" name="insulin" placeholder="e.g. 125" required>
+            </div>
+            <div class="form-field">
+              <label for="bmi">BMI</label>
+              <input type="text" id="bmi" name="bmi" placeholder="e.g. 36.4" required>
+            </div>
+            <div class="form-field">
+              <label for="dpf">Diabetes Pedigree Function</label>
+              <input type="text" id="dpf" name="dpf" placeholder="e.g. 0.68" required>
+            </div>
+            <div class="form-field">
+              <label for="age">Age</label>
+              <input type="text" id="age" name="age" placeholder="e.g. 41" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- Centered Button Wrapper -->
+        <div class="form-button-wrapper">
+          <button type="submit" class="btn">Predict</button>
+        </div>
+      </form>
+
+      <!-- Display Error Message (if any) -->
+      {% if error %}
+      <div class="prediction-result" style="background-color: #ffe6e6; border: 1px solid #ff0000;">
+        <h3>Error:</h3>
+        <p style="color: #ff0000;">{{ error }}</p>
+      </div>
+      {% endif %}
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h2 class="logo">CureCare</h2>
+        <div class="social-icons">
+          <a href="#">📷</a>
+          <a href="#">📘</a>
+          <a href="#">🐦</a>
+          <a href="#">💼</a>
+        </div>
+      </div>
+      <div>
+        <h4>CureCare</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="{{ url_for('skin') }}">Skin Disease Predictor</a></li>
+          <li><a href="{{ url_for('symptom') }}">Symptom Classifier</a></li>
+          <li><a href="{{ url_for('summary') }}">Note Summarizer</a></li>
+          <li><a href="{{ url_for('diabetes') }}">Diabetes Analyzer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <p>support@curecare.com</p>
+        <p>Delhi, India</p>
+        <p>‪+91 1234 567890‬</p>
+      </div>
+    </div>
+    <p class="copyright">
+      Copyright © 2025 CureCare. All rights reserved.
+    </p>
+  </footer>
+
+</body>
+</html>

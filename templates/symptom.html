@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Symptom Classifier</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='symptom.css') }}" />
+  <style>
+    .prediction-results-container {
+      background-color: #f8f9fb;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      text-align: left;
+      max-width: 800px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .prediction-results-container h3 {
+      color: #00a99d;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .prediction-results-container p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .prediction-results-container pre {
+      white-space: pre-wrap; /* Ensures long text wraps */
+      word-wrap: break-word; /* Breaks long words */
+      background-color: #e6fafa;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 15px;
+      color: #1d7874;
+      border: 1px solid #b8f2f2;
+      max-height: 400px; /* Limit height for scrollability */
+      overflow-y: auto; /* Add scrollbar if content overflows */
+    }
+
+    .symptom-form input[type="text"] {
+      width: 100%;
+      max-width: 600px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <h1 class="logo">CureCare</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li class="dropdown">
+            <a href="#" class="active">Services ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ url_for('diabetes') }}">Diabetes Risk Analyzer</a></li>
+              <li><a href="{{ url_for('skin') }}">Skin Disease Predictor</a></li>
+              <li><a href="{{ url_for('symptom') }}">Symptom Classifier</a></li>
+              <li><a href="{{ url_for('summary') }}">Note Summarizer</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Image -->
+  <section class="hero-img">
+    <img src="{{ url_for('static', filename='image/2.jpg') }}" alt="Symptoms" />
+  </section>
+
+  <!-- Classifier Section -->
+  <section class="classifier-section">
+    <div class="container">
+      <h2><span>Symptom</span> Classifier</h2>
+      <p>
+        Feeling unwell but not sure what it is? Our AI-powered Symptom Classifier can help.
+        Simply describe your symptoms, and our tool will analyze them to suggest potential conditions.
+      </p>
+      <p>
+        This tool offers quick, preliminary insights to guide your next steps.
+        It's designed to provide helpful information, not a medical diagnosis. Always consult a healthcare professional for accurate advice.
+      </p>
+
+      <!-- Symptom Input Form -->
+      <form action="{{ url_for('symptom') }}" method="post" class="symptom-form">
+        <label for="symptoms">Describe your symptoms:</label>
+        <textarea id="symptoms" name="symptoms" rows="5" placeholder="e.g., 'Fever, cough, body aches, and sore throat'" required></textarea>
+
+        <label for="location" style="margin-top: 20px;">Your Location (for nearby doctors)</label>
+        <input type="text" id="location" name="location" placeholder="e.g., New Delhi, India" required>
+
+        <button type="submit" class="btn">Classify & Get Info</button>
+      </form>
+
+      <!-- Prediction Results Display -->
+      {% if text_pred or chatbot_response %}
+      <div class="prediction-results-container">
+        <h3>Prediction Result:</h3>
+        {% if text_pred %}
+        <p><strong>Predicted Condition:</strong> {{ text_pred }}</p>
+        {% endif %}
+        {% if chatbot_response %}
+        <p><strong>Detailed Information & Doctor Suggestions:</strong></p>
+        <pre>{{ chatbot_response }}</pre>
+        {% endif %}
+      </div>
+      {% endif %}
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h2 class="logo">CureCare</h2>
+        <div class="social-icons">
+          <a href="#">📷</a>
+          <a href="#">📘</a>
+          <a href="#">🐦</a>
+          <a href="#">💼</a>
+        </div>
+      </div>
+      <div>
+        <h4>CureCare</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="{{ url_for('skin') }}">Skin Disease Predictor</a></li>
+          <li><a href="{{ url_for('symptom') }}">Symptom Classifier</a></li>
+          <li><a href="{{ url_for('summary') }}">Note Summarizer</a></li>
+          <li><a href="{{ url_for('diabetes') }}">Diabetes Analyzer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <p>support@curecare.com</p>
+        <p>Delhi, India</p>
+        <p>‪+91 1234 567890‬</p>
+      </div>
+    </div>
+    <p class="copyright">
+      Copyright © 2025 CureCare. All rights reserved.
+    </p>
+  </footer>
+
+</body>
+</html>

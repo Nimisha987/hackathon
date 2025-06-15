@@ -1,0 +1,9 @@
+Flask
+Pillow
+scikit-learn
+torch
+transformers
+requests
+google-generativeai
+werkzeug
+gunicorn

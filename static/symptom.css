@@ -1,0 +1,215 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  line-height: 1.6;
+  background: #fff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+span {
+  color: #00a99d;
+}
+
+/* Header */
+header {
+  padding: 20px 0;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+/* Dropdown Menu */
+.nav .dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: none;
+  background-color: white;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  border-radius: 6px;
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f2f2f2;
+  color: #1d7874;
+}
+
+/* Show dropdown on hover */
+.nav .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #00a99d;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-weight: 500;
+}
+
+.nav-links .active {
+  border-bottom: 2px solid #00a99d;
+}
+
+/* Hero Image */
+.hero-img img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* Classifier Section */
+.classifier-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.classifier-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.classifier-section p {
+  max-width: 800px;
+  margin: 10px auto;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Form */
+.symptom-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.symptom-form label {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.symptom-form textarea {
+  width: 100%;
+  max-width: 600px;
+  height: 150px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.symptom-form .btn {
+  margin-top: 20px;
+  background: #00a99d;
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.symptom-form .btn:hover {
+  background: #008f85;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(to top, #00a99d, #f9f9f9);
+  padding: 40px 0 20px;
+  color: #333;
+  margin-top: 60px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.footer-grid h4 {
+  margin-bottom: 10px;
+}
+
+.footer-grid ul li {
+  margin: 6px 0;
+}
+
+.footer-grid a {
+  color: inherit;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+footer .logo {
+  color: #00a99d;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer .copyright {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 30px;
+}

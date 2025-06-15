@@ -1,0 +1,10 @@
+# Python virtual environment
+venv_curecare/
+.env
+
+# Compiled Python files
+__pycache__/
+*.pyc
+
+# Uploaded files
+static/upload/
