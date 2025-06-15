@@ -1,94 +1,57 @@
-# CuraCare – AI-Enabled Healthcare Support System
-## Problem Statement
+CureCare – AI-Enabled Healthcare Support System
+🌟 Overview
+CureCare is an AI-powered platform addressing healthcare access gaps, particularly in semi-urban and rural India. By leveraging machine learning, we aim to make diagnostics and preliminary medical insights more accessible, efficient, and affordable for everyone. Our current suite of AI services supports faster, smarter, and more informed healthcare decisions.
 
-India continues to face a significant healthcare gap, particularly in semi-urban and rural regions. Limited access to qualified doctors, language barriers, insufficient health infrastructure, and the lack of electronic health records make early diagnosis, consultation, and follow-up care inefficient and inaccessible.
+🚀 Key AI Services
+CureCare offers specialized tools to help users understand their health better:
 
-##  Our Mission
+🔹 Diabetes Risk Analyzer
+An AI-powered tracker that assesses potential diabetes risk based on user-provided health indicators. It provides a quick, private, and accessible way to gain clarity and is a starting point for early health control.
 
-**CureCare** aims to bridge this gap by leveraging AI and machine learning to make diagnostics and medical consultation more accessible, efficient, and affordable for all.
+🔬 Skin Disease Predictor
+Upload an image to get an AI-driven analysis of visible skin symptoms, offering preliminary interpretations and probable conditions. It's designed to provide quick, supportive insights and peace of mind before seeking professional medical advice.
 
-##  What is CuraCare?
+💬 Symptom Classifier
+Describe your symptoms in text, and our AI tool will analyze them to suggest possible conditions or next steps. It helps users make sense of what they're experiencing and feel more informed, with privacy as a core tenet.
 
-**CuraCare** is an AI-powered platform designed to simplify the healthcare experience for both patients and doctors. From early symptom detection to AI-generated consultation notes, our tools support faster, smarter, and more empathetic healthcare delivery.
+📝 Medical Note Summarizer
+Paste complex medical reports or notes, and our AI will generate clear, concise summaries, translating jargon into simple language. This feature aids in quickly grasping key details from medical documentation.
 
-## Key Features
+💻 Tech Stack
+Backend: Flask
 
-###  ML-Based Symptom Analysis
+Web Server: Gunicorn
 
-Patients or health workers can upload:
+ML Frameworks: PyTorch (for image models), Scikit-learn (for classification/preprocessing), Hugging Face Transformers (for summarization)
 
-* Symptoms (text or voice)
-* Images (rashes, prescriptions, test reports)
+Utility Libraries: Pillow, requests, google-generativeai, werkzeug
 
-A machine learning model analyzes inputs and provides:
+Frontend: HTML, CSS, JavaScript
 
-* Preliminary interpretation
-* Probable conditions or risks
+API Management: Environment variables (python-dotenv for local, Render's built-in for deploy) for secure API key handling.
 
-### 📞 Online Doctor Consultation
+🔮 Future Enhancements & Add-ons
+We are continuously working to expand CureCare's capabilities to provide even more comprehensive healthcare support:
 
-After the analysis:
+📞 Online Doctor Consultation Integration: Implement secure video/audio consultation features, allowing seamless connection with verified doctors directly through the platform.
 
-* Users get matched with **verified doctors**
-* Can consult online via **video/audio chat**
-* Enables care even in remote areas
+🏥 Electronic Health Records (EHR) Management: Develop a secure system for patients to store and manage their health records, enabling easier sharing with doctors and better continuity of care.
 
+🗣️ Voice-Based Symptom Input: Enhance the symptom classifier to accept voice input, making the platform more accessible for users with varying digital literacy.
 
-###  AI-Powered Note-Taking for Doctors
+📊 Personalized Health Dashboards: Provide users with personalized dashboards to track their health metrics over time, visualize risk trends, and receive tailored health recommendations.
 
-During consultation:
+💊 Medication Reminders & Management: Introduce features for managing prescriptions, setting medication reminders, and providing information on drug interactions.
 
-* The system listens to conversations and auto-generates structured notes
-* Reduces the paperwork burden and improves accuracy
+🌐 Multi-language Support: Expand the platform's accessibility by offering support for multiple regional languages to cater to India's diverse linguistic landscape.
 
-## Our AI Services
+👩‍⚕️ Doctor-Specific Features: Tools for doctors to manage appointments, review patient history, and generate secure prescriptions.
 
-### 🔹 Diabetes Risk Analyzer
+🌐 Vision
+We envision a future where everyone, regardless of location or income, can access affordable, quality healthcare using just a phone. CureCare is not just a tech platform; it's a movement toward health equity powered by AI.
 
-Diabetes often develops silently, without clear symptoms in the early stages. Our AI-powered Diabetes Prediction Tracker helps you understand your potential risk through a few simple questions and health indicators.
+🤝 Contributions Welcome
+Have ideas to improve CureCare? We welcome collaborators — whether you're a medical expert, ML developer, or UI/UX designer. Feel free to fork the repository and submit pull requests.
 
-Whether you're just curious or have a family history, this tool offers a quick, private, and accessible way to gain clarity. It’s not a diagnosis — it’s a starting point to help you take control of your health, early and confidently.
-
-###  Skin Disease Predictor
-
-Skin issues can be confusing and stressful — especially when you're unsure of what's causing them. Our AI-powered Skin Disease Predictor helps you get clarity by analyzing visible symptoms through images or basic inputs.
-
-Whether it's a mild rash, irritation, or something more persistent, this tool offers quick, supportive insights. It’s not a replacement for medical advice, but a first step toward informed care and peace of mind.
-
-###  Symptom Classifier
-
-When you're feeling unwell, it can be hard to put your symptoms into words — or to know what they might mean. Our AI-driven Symptom Classifier helps you make sense of what you're experiencing by analyzing the symptoms you enter and suggesting possible conditions or next steps.
-
-It’s a simple, supportive way to better understand your health and feel more informed before seeking medical help. Your input stays private, and the insights are designed to guide, not alarm.
-
-
-## 📊 Impact Highlights
-
-* **850+** Conditions identified
-* **85%** Prediction accuracy
-* **500+** Patients served
-
-## 🔧 Tech Stack
-
-* **Frontend:** HTML, CSS, JavaScript
-* **Backend:** Flask 
-* **ML Models:** Scikit-learn, TensorFlow (for image & text interpretation)
-* **Database:** Firebase / MongoDB (for health records)
-* **APIs:** WebRTC, Twilio (for consultations)
-
-
-## 🌍 Vision
-
-We envision a future where everyone, regardless of location or income, can access affordable, quality healthcare using just a phone. **CuraCare** is not just a tech platform; it's a movement toward **health equity** powered by **AI**.
-
----
-
-## 🤝 Contributions Welcome
-
-Have ideas to improve CuraCare? We welcome collaborators — whether you're a medical expert, ML developer, or UI/UX designer.
-
-
-## 📫 Contact
-
-Feel free to reach out via [LinkedIn](#) or email us at **[contact@curecare.ai](mailto:contact@curecare.ai)**
-
+📫 Contact
+Feel free to reach out via LinkedIn (replace with actual LinkedIn if available) or email us at contact@curecare.ai
