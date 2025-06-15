@@ -7,3 +7,4 @@ requests
 google-generativeai
 werkzeug
 gunicorn
+python-dotenv
